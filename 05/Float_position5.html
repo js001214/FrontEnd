@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            body {
+
+        height: 100vh;
+}
+        a:link {text-decoration: none; color: blueviolet;
+        }
+        header {
+            width : 100%; height : 10%;
+            background-color: greenyellow;
+        }
+
+        section {
+            background-color: aquamarine;
+            width: 30%; height : 80%; 
+            float: left;
+        }
+        .a
+        {   
+            background-color: beige;
+            width: 70%; height : 80%; 
+            float : left;
+        }
+
+        footer{
+            width : 100%; height : 10%;
+            background-color: floralwhite;
+            clear:both
+        }
+
+    </style>
+</head>
+<body>
+    <!-- Float 속성을 사용해서 레이아웃 실습 
+        레이아웃 잡을때 border 1px solid red;
+    -->
+<div class = "fix">
+    <header>    집에 가고 싶은 사람 손! <!-- width 100% height : 10%-->
+        <nav>  메뉴를 고르세여~ <br><br>
+            <span> 목차 </span>
+                <ul>
+                    <li><a href ="https://www.google.com" target="_blank"> 우리/</a> <a href="https://www.google.com"> 엄마</a> </li>
+                </ul>
+            </nav>
+    </header>       
+
+
+    <section>   <!-- 왼쪽 30% -->
+        아기 상어 뚜루뚜두
+        <article> baby </article>
+        <article> shark </article>
+        <article> drururu </article>
+    </section>
+
+    <section class ="a">  <!-- 중앙 (main) 70% -->
+        다나카 사랑해
+        <aside>하</aside>
+        <aside>하</aside>
+        <aside>하</aside>
+    </section>
+         
+    <footer> 전화번호, 주소, 오시는길, 오지마세요</footer>       <!-- 100%                   10%-->
+
+</div> 
+
+</body>
+</html>

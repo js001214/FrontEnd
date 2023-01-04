@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var x = 5;  // 0101
+        var y = 7;  // 0111
+        var result;
+
+        result = (x & y);   //비트곱    //& 비교값들끼리 같으면 참
+        document.write("x & y : " + result + "<br>"); //5
+        result = (x | y);   //비트합    // | 비교값들끼리 하나라도 1이면 1, 모두 0이면 0
+        document.write("x | y : " + result + "<br>"); // 7
+        result = (x ^ y);   //배타적 비트합
+        document.write ("x ^ y : " + result + "<br>"); // ^ 두 비트가 같을때 0, 다를때 1
+        result =(~x);       //비트 부정
+        document.write ("~x = " + result + "<br>"); // ~ 비트값이 1이면 0, 0이면1
+
+
+
+
+    </script>
+    
+</body>
+</html>
