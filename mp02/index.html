@@ -8,11 +8,12 @@
     <style>
         * {margin : 0 ; padding : 0 ;}
         ul { list-style-type: none;}
-        #page {width : 970px; margin : 0 auto; border: 1px solid red;}
+        #page {width : 970px; margin : 0 auto; /*border: 1px solid red;*/}
         header {height:100px;
         position: relative;}
         .line{
             border: 1px solid grey;
+            width: auto
         }
         .clear {clear:both;}
         header #logo {
@@ -24,7 +25,7 @@
             font-size: 15px;
         }
         header #main_menu {
-            border: 1px solid red;
+          /*  border: 1px solid red; */
             width: 757px;
             height: 50px;
             background-repeat: no-repeat;
@@ -121,11 +122,11 @@
             float: right;
         }
         #youtube_box{
-            float:left;
-            position: relative;
-            left:25px;
-            width: 320px;
-            bottom: 107px;
+                position: relative;
+                width: 365px;
+                height: 250px;
+                left: 623px;
+                bottom: 234px
         } 
         #youtube_box #more_image{
             float:right;
@@ -133,17 +134,51 @@
         #youtube_box #youtube_player{
             text-align: center;
             margin-top: 5px;
-        }
-        #main #photo_box {
-
-            border: 5px solid blue;
+           
         }
 
-        #main #photo_border {
-            width: 300px;
-            height : 180px;
-            background-color:gold;
+        #gallery1 {
+            width:749px;
+            height:204px;
+            margin:10px 0 0 5px;
+            border:solid 1px #cccccc;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px #dddddd;
+            margin-left : 220px;
+            
         }
+
+        #gallery_list {
+            padding:25px 0 0 18px;
+        }
+        section .items {
+            float:left;
+            text-align: center;
+            margin-left: 35px;
+        }
+        section .items li {
+            margin-top: 3px;
+        }
+
+        #footer_logo {
+            float: left;
+            margin-left: 200px;
+        }
+        #footer_info {
+            float: left;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 13.6px;
+            margin-left: 40px;
+
+        }
+        #footer_menu #imgs img{
+            float:right;
+            padding-left: 5px;
+        }
+        
+ 
+
+    
 
 
 
@@ -270,27 +305,63 @@
                         <img src = "img/bach.jpg">
                     </div>
                 </div>
-                <div class ="clear"></div>
+                <section id = "gallery">
+                    <img src ="img/latest4.gif" style="margin-left: 220px;">
+                    <div id = "gallery1">
+                        <div id = "gallery_list">
+                            <div class="items">
+                                <ul>
+                                    <li><img src ="img/img1.jpg"></li>
+                                    <li>기타 페스티벌 4중주</li>
+                                </ul>
+                            </div>
+                            <div class="items">
+                                <ul>
+                                    <li><img src ="img/img1.jpg"></li>
+                                    <li>기타 페스티벌 4중주</li>
+                                </ul>
+                            </div>
+                            <div class="items">
+                                <ul>
+                                    <li><img src ="img/img1.jpg"></li>
+                                    <li>기타 페스티벌 4중주</li>
+                                </ul>
+                            </div>
+                        </div><!--gallery_list-->
 
-                <div id ="photo_box">
-                    <img src ="./img/latest4.gif">
-                    <div id = "photo_border">
-                        <div id = "gui">
+                    </div> <!-- gallery_box-->
 
-                        </div>
-                        
-
-                    </div>
-
-                    
-                </div>
-
-
+                </section> <!-- gallery-->
+            
 
             </section>
             
         </main>
-        <footer></footer>
+
+
+        <footer>
+            <div class="line" style="margin: 60px 0 20px 20px;"></div>
+            <div id="footer_menu">
+                <div id="footer_logo" >
+                    <img src="./img/footer_logo.gif">
+                </div>
+                <div id = "footer_info">
+                    <ul>
+                        <li>서울시 강남구 삼성동 1234 우 : 123-1234</li>
+                        <li>TEL : 301-123-1234 Email : email@domain.com</li>
+                        <li>COPYRIGHT(c) 루바토 ALL RIGHTS RESERVED</li>
+                    </ul>
+                </div>
+
+                <div id = "imgs">
+                    
+                <img src="./img/facebook.gif">
+                <img src="./img/blog.gif">
+                <img src="./img/twitter.gif">
+                </div>
+            </div>
+
+        </footer>
     </div>   
 </body>
 </html>

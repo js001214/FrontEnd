@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자유게시판</title>
+
+<style>
+
+        * {margin : 0 ; padding : 0 ;}
+        ul { list-style-type: none;}
+        #page {width : 970px; margin : 0 auto; /*border: 1px solid red;*/}
+        header {height:100px;
+        position: relative;}
+        .line{
+            border: 1px solid grey;
+            width: auto
+        }
+        .clear {clear:both;}
+
+        header #logo {
+            position: absolute;
+        }
+        header #top_menu {
+            position : absolute;
+            left: 730px;
+            font-size: 15px;
+        }
+        header #main_menu {
+          /*  border: 1px solid red; */
+            width: 757px;
+            height: 50px;
+            background-repeat: no-repeat;
+            position: absolute;
+            top:30px;
+            left:210px;
+            background-image: url("img/main_menu_bg.png");
+            padding-top: 10px;
+        }
+
+        header #main_menu {
+          /*  border: 1px solid red; */
+            width: 757px;
+            height: 50px;
+            background-repeat: no-repeat;
+            position: absolute;
+            top:30px;
+            left:210px;
+            background-image: url("img/main_menu_bg.png");
+            padding-top: 10px;
+        }
+
+        #main_menu li {
+            display: inline;
+            font-size: 15px;
+            color: aliceblue;
+            margin: 0 30px 0 40px;
+        }
+
+        aside {
+            width:190px;
+            float:left;
+        }
+        aside #login_box {
+            background-color: #f3f3f3;
+            width: 186px;
+            height: 120px;
+            border: solid 1px #dddddd;
+            border-radius: 10px;
+        }
+
+        #login_box #input_button {
+            margin:10px 0 0 10px;
+        }
+
+        #login_input {
+            float:left;
+        }
+        #login_btn {
+            float:left;
+            margin: 3px 0 0 5px;
+            
+        }
+        aside #login_input input {
+            width:100px
+        }
+
+        aside #btn #btn_join {
+            margin-left: 10px;
+        }
+
+        /*--------------------------------------*/
+
+        aside #sub1 {/*커뮤니티 박스*/
+            background-image: url("./img/sub_menu_bg.png");
+            background-repeat: no-repeat;
+            height: 320px;
+            margin-top: 20px;
+        }
+        aside #sub1 #community {
+            margin-left: 20px;
+            margin-top: 30;
+            position: relative;
+            top:90px;
+            left:10px;          
+        }
+        aside #sub1 #community li {
+            font-size: 14px;
+            margin-top: 15px;
+            color : grey;            
+        }
+
+
+        aside #banners {
+            margin-top: 30px;
+        }
+        #main_box #comm {
+            margin : 0px 0 0 23px;
+        }
+
+        #main_box #board_box {
+            margin
+
+        }
+        #main_box #board_box #five {
+            float:left;
+            margin-right: 263px;
+        }
+
+        #main_box #board_box #select_search {
+            float:left;
+        }
+        #main_box #board_box #options {
+            float:left;
+        }
+        #main_box #board_box #blank_search {
+            float:left;
+        }
+
+        #main_box #grey_zone #n1{
+            margin-right: 280px;
+        }
+        #main_box #grey_zone #t1{
+            margin-right: 30px;
+        }
+        #main_box #grey_zone #au1{
+            margin-right: 50px;
+        }
+        #main_box #grey_zone #dt1{
+            margin-right: 60px;
+        }
+        #main_box #grey_zone #vw1{
+            margin-right: 50px;
+        }
+
+</style>
+</head>
+<body>
+    <div id="page">
+
+        <header>
+            <img id ="logo" src = "./img/logo.png">
+            <nav id ="top_menu">
+                HOME | LOGIN | JOIN | NOTICE
+            </nav>
+            <nav id ="main_menu">
+            <ul>
+                <li>자유 게시판</li>
+                <li>기타 연주</li>
+                <li>공동 구매</li>
+                <li>연주회 안내</li>
+                <li>회원 게시판</li>
+            </ul>
+        </nav>
+        </header>
+
+
+
+    <main>
+        
+            <aside>
+
+                <article id = "login_box">
+                    <img src="./img/ttl_login.png">
+                    <div id ="input_button">
+                        <ul id ="login_input">
+                            <li><input type ="text"></li>
+                            <li><input type ="password"></li>
+                        </ul>
+                        <img id="login_btn" src="img/btn_login.gif">
+                    </div>
+                    <div id = "btn">
+                        <img id = "btn_join" src="./img/btn_join.gif">
+                        <img src="./img/btn_search.gif">
+                    </div>
+                </article>
+
+                <article id = "sub1">
+                    <div id = "community">
+                        <ul>
+                            <li>+ 자유 게시판</li>
+                            <li>+ 방명록</li>
+                            <li>+ 공지사항</li>
+                            <li>+ 등업 요청</li>
+                            <li>+ 포토갤러리</li>
+                        </ul>
+
+
+                    </div>
+                </article>
+
+                <article id = "banners">
+                    <img src = "img/banner1.png">
+                    <img src = "img/banner2.png">
+                    <img src = "img/banner3.png">
+                </article>
+
+            </aside>
+
+            <div id = "main_box">
+                <div id ="main_photo">
+                    <img id ="comm" src="./img/comm.gif">
+                </div>
+
+                <div id = "board_box">
+                    <h4>자유 게시판</h4>
+                    <div class = line style="margin-bottom: 20px;"></div>
+
+                    <div id = "board_mid">
+                        
+                        <div id = "five" style="font-size: 14px;">
+                            ▷총 5개의 게시물이 있습니다.
+                        </div>
+
+                        <div id = "select_search"><img src="./img/select_search.gif"></div>
+                        <div id="options">
+                            <select>
+                                <option>제목</option>
+                                <option>번호</option>
+                                <option>글쓴이</option>
+                            </select>
+                        </div>
+                        <div id = "blank_search">
+                            <input type="text" style="width: 120px;">
+                        </div>
+                        <img src = "./img/search_button.gif">
+                        <div class = "line"></div>
+
+
+
+                    </div>
+
+                    <div id ="grey_zone">
+                        <div id ="n1" style="float:left">번호</div>
+                        <div id ="t1" style="float:left">제목</div>
+                        <div id ="au1" style="float:left">글쓴이</div>
+                        <div id ="dt1" style="float:left">일시</div>
+                        <div id ="vw1" style="float:left">조회수</div>
+                    </div>
+
+
+                </div>
+
+
+
+
+
+            </div>
+
+        
+    
+
+    </main>
+
+    <footer></footer>
+
+    </div>
+</body>
+</html>

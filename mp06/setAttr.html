@@ -78,6 +78,15 @@
 
     </div>
     <script>
+/*
+        querySelector () : css - id : #, class : .
+        getElementById() : 태그 내부에 적용된 Id
+        getElementByClassName() : 태그 내부에 적용된 class
+
+        엘리맨트(태그)의 속성값을 변경할때 : 객체 .setAttribute를 사용함. id 속성에만 적용되어있다.
+            class 속성에는 setAttribute가 없다.
+
+*/
         //class,id속성을 가져와서 변수에 할당
         var pics = document.getElementsByClassName("pic");
         var lightbox = document.getElementById("lightbox");
@@ -97,6 +106,7 @@
             lightbox.style.display = "block";
     
         }
+        
     
     </script>
 
