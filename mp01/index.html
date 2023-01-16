@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // JavaScript를 넣는 블락
+        function includeHTML(){
+    let z, elmnt, file, xhttp;
+ 
+    z = document.getElementsByTagName("*");
+    
+    for (let i = 0; i < z.length; i++) {
+      elmnt = z[i];
+      file = elmnt.getAttribute("data-include");
+      
+      if (file) {
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4) {
+            if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+            if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+            /* Remove the attribute, and call this function once more: */
+            elmnt.removeAttribute("data-include");
+            includeHTML();
+          }//if
+        }//onreadystatechange
+ 
+        xhttp.open("GET", file, true);
+        xhttp.send();
+        return;
+      }//if - file
+    }//for
+}//includeHTML
+ 
+ 
+/* ✨ 실행 */
+window.addEventListener('DOMContentLoaded',()=>{
+    includeHTML();
+});
+    </script>
+    <style>
+    * {
+    margin:0;
+    padding:0;
+    }
+    body {
+        font-family:"맑은 고딕","돋움";
+        font-size:12px;
+        color:#444444;
+    }
+    ul {
+        list-style-type:none;
+    }
+    .clear {
+        clear:both;
+    }
+
+    #page {
+        width:980px;
+        margin:0 auto;
+    }
+    .line {
+        margin-top:25px;
+        border-top:solid 1px #cccccc;
+    }
+
+    </style>
+</head>
+<body>
+    <div id = page>       <!-- JavaScript를 사용해서 외부 파일을 include-->
+       <div data-include="header.html"></div>
+       <div data-include="main.html"></div>
+       <div data-include="footer.html"></div>
+    <script>
+           includeHTML()
+       </script>
+    </div>
+
+</body>
+</html>

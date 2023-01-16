@@ -29,15 +29,19 @@
         padding-top: 100px;
         padding-left: 100px }
 
-            .typing-demo {
-                width: 20ch;
-  animation: typing 2.2s steps(22), blink .5s step-end infinite alternate;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid;
-  font-family:fantasy;
-  font-size: 2em;
-            }
+
+    /*------------------------------------------------------ */
+    
+        .typing-demo 
+        {
+            width: 20ch;
+            animation: typing 2.2s steps(22), blink .5s step-end infinite alternate;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid;
+            font-family:fantasy;
+            font-size: 2.5em;
+        }
 
             @keyframes typing {
             from {
@@ -50,6 +54,8 @@
                 border-color: transparent
                 }
             }
+    /*------------------------------------------------------ */
+        
     
     </style>
 </head>
@@ -61,20 +67,22 @@
               Welcome to Time To Tarot!
             </div>
         </div>
-        <div id = "header_top">
+    <div id = "header_top">
            <!-- <img src ="img/logoTTT.jpg" style="width:200px;"> -->
             <div class="typewriter-effect">
                 <div class="text" id="typewriter-text"></div>
               </div>
         </div>
-        <div>
-        <img id ="spin_card" src="https://d2j7tphr4goaoo.cloudfront.net/tarot/assets/images/card3d.gif" alt="TAROT">
-    </div>
-
     </header>
 
 
-    <main></main>
+    <main>
+
+        <div>
+            <a href="page2.html"><img id ="spin_card" src="https://d2j7tphr4goaoo.cloudfront.net/tarot/assets/images/card3d.gif" alt="TAROT"></a>
+        </div>
+
+    </main>
 
 
     <footer></footer>

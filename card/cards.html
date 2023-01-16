@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Script src = "jquery-3.6.3.min.js"></Script>
+    <script>
+        // 카드수가 총 13개 * 4개(♠︎ ♥︎ ♣︎ ♦︎) = 52개
+// 조커(선물 당첨) 1개 추가 => 총 54개
+
+//임의 조작 카드 52개 
+//카드 52개 + 선물당첨카드 1개
+const cards = new Array(53);
+
+//just loop through the cards:
+for (let i = 0; i < cards.length; i++) {
+  cards[i] = i;
+}
+
+const ranks = 'A 2 3 4 5 6 7 8 9 10 J Q K'.split(' ');
+const suits = '♠︎ ♥︎ ♣︎ ♦︎'.split(' ');
+
+const getProperties = (i) => {
+  const joker = i > 51;
+  const rank = joker ? -1 : i % 13;
+  const value = rank + 1;
+  const suit = joker ? -1 : i/13 | 0;
+  const color = suit % 2 ? 'red' : 'black';
+  return { rank:ranks[rank], value, suit: suits[suit], joker };
+};
+
+const shuffle = (cards) => {
+  for (let i = 0; i < cards.length; i++) {
+    //Fisher-Yates shuffle
+    const rnd = Math.random() * i | 0;
+    const tmp = cards[i];
+    cards[i] = cards[rnd];
+    cards[rnd] = tmp;
+  }
+  return cards;
+};
+
+setTimeout(() => {
+  shuffle(cards);
+    let cardsListDom = document.createElement('div');
+    cardsListDom.className = "card_box";
+    cardsListDom.innerHTML = CreateCard(getProperties);
+    document.body.appendChild(cardsListDom);
+  }, 1000);
+
+const CreateCard = (cardList) => {
+  let List = cardList;
+  let arr = cards.map(cardList);
+  let stringText = "";
+  arr.forEach(function(element,index,array){  
+    let joker = arr[index].joker;
+    let rank =  arr[index].rank;
+    let suit =  arr[index].suit;
+    
+    console.log('나옴'+ joker + rank + suit);
+    
+    stringText += `<div class="card_bind">
+                  ${joker ? `<div class="front"></div>
+                    <div class="back">
+                        <div class="card_gift">
+                            <img
+                                src="https://us.123rf.com/450wm/tashka2000/tashka20001111/tashka2000111100051/11275945-%ED%9D%B0%EC%83%89-%EB%B0%B0%EA%B2%BD-%EC%9C%84%EC%97%90-%ED%9D%B0%EC%83%89-%EB%A6%AC%EB%B3%B8%EC%9D%B4-%EB%8B%AC%EB%A6%B0-%EB%B9%A8%EA%B0%84%EC%83%89-%EC%84%A0%EB%AC%BC-%EC%83%81%EC%9E%90.jpg?ver=6">
+                                <span
+                                class="card_gift_text">선물당첨</span>
+                            </div>
+                    </div>`:
+                  `<div class="front"></div><div class="back"><div class="card_rank">${rank}</div><div class="card_suit">${suit}</div></div>`}
+                  </div>`;
+  })
+  
+  
+  return stringText;
+};
+
+const givePresent = () =>{
+  
+}
+const pre = document.createElement('pre');
+
+
+document.body.appendChild(pre);
+
+var elementButton = document.getElementById("button");
+elementButton.addEventListener("click", function(){
+  var el = document.querySelector(".card_box");
+  el.classList.add("spread");
+}, false);
+
+//애니메이션 셔플이 끝날 때 클래스 넣어주기
+//뒤집는 함수 넣어 주기
+setTimeout(() => {
+  var el = document.querySelector(".card_box");
+  el.classList.add("show_back");
+
+  let cardBind = document.querySelectorAll(".card_bind");
+
+  for (let i = 0; i < cardBind.length; i++) {
+    cardBind [i].addEventListener("click", function() {
+      cardBind [i].classList.toggle("on");
+    });
+  }
+
+}, 4400);
+
+    </script>
+    <style>
+        body {
+    background: #eff1f3;
+}
+.card_box {
+    position: relative;
+    width: 880px;
+    height: 100vh;
+    margin: 0 auto;
+}
+.card_gift {
+    img {
+        width: 50px;
+        height: 50px;
+    }
+    font-size: 10px;
+    &_text {
+        display: block;
+        color: #f00;
+        text-align: center;
+    }
+}
+
+.card_bind {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    width: 80px;
+    height: 112px;
+    border-radius: 5px;
+    border: 1px solid #000;
+    vertical-align: top;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-style: preserve-3d;
+    @at-root .spread & {
+        position: absolute;
+        transition: all 1s cubic-bezier(0.25, 0.1, 0.79, 2.03);
+    }
+    @at-root &.on {
+        transform: rotateY(180deg);
+        transition: all 1s ease;
+    }
+}
+.back {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    font-size: 30px;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    background: #fff;
+    border-radius: 5px;
+    border: 1px solid #000;
+}
+.front {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: green;
+    backface-visibility: hidden;
+}
+.card_rank {
+    text-align: center;
+}
+.card_bind:first-child {
+}
+.card_bind:nth-child(2) {
+    animation-name: shuffle2;
+    animation-duration: 0.3s;
+    animation-iteration-count: 3;
+    animation-delay: 0.8s;
+    z-index: 4;
+}
+
+.card_bind:nth-child(3) {
+    animation-name: shuffle3;
+    animation-duration: 0.3s;
+    animation-iteration-count: 2;
+    animation-delay: 1s;
+    z-index: 3;
+}
+
+.card_bind:nth-child(4) {
+    animation-name: shuffle4;
+    animation-duration: 3s;
+    z-index: 2;
+}
+
+.card_bind:nth-child(5) {
+    animation-name: shuffle5;
+    animation-duration: 3s;
+    z-index: 1;
+}
+.card_bind:nth-child(6) {
+    animation-name: shuffle1;
+    animation-duration: 0.3s;
+    animation-iteration-count: 5;
+    z-index: 4;
+}
+
+.card_bind:nth-child(7) {
+    animation-name: shuffle6;
+    animation-duration: 0.3s;
+    animation-iteration-count: 5;
+    z-index: 4;
+}
+
+@keyframes shuffle1 {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(60px, 0) rotate(8deg);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes shuffle2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-60px, -10px) rotate(-5deg);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes shuffle3 {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(40px, 10px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes shuffle4 {
+    30% {
+        transform: translateX(80px) rotate(15deg);
+    }
+    50% {
+        transform: translateX(-20px);
+        z-index: 1;
+    }
+    80% {
+        transform: translateX(-10px);
+    }
+}
+
+@keyframes shuffle5 {
+    30% {
+        transform: translateX(-50px) rotate(-15deg);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+    80% {
+        transform: translateX(10px);
+    }
+}
+
+@keyframes shuffle6 {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-50px, -10px) rotate(8deg);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+@for $i from 1 through 11 {
+    .spread .card_bind:nth-child(#{$i}) {
+        left: 80 * ($i - 1px);
+        top: 0px;
+    }
+}
+@for $i from 12 through 22 {
+    .spread .card_bind:nth-child(#{$i}) {
+        left: 80 * ($i - 12px);
+        top: 112 * 1px;
+    }
+}
+@for $i from 23 through 33 {
+    .spread .card_bind:nth-child(#{$i}) {
+        left: 80 * ($i - 23px);
+        top: 112 * 2px;
+    }
+}
+@for $i from 34 through 44 {
+    .spread .card_bind:nth-child(#{$i}) {
+        left: 80 * ($i - 34px);
+        top: 112 * 3px;
+    }
+}
+@for $i from 45 through 55 {
+    .spread .card_bind:nth-child(#{$i}) {
+        left: 80 * ($i - 45px);
+        top: 112 * 4px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <button type="button" id="button">카드펼침</button>
+<h1>선물 당첨 카드를 뒤집어 보세요.</h1>
+</body>
+</html>
