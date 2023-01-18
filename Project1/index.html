@@ -9,12 +9,21 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+    <!-- 스크롤 애니메이션 효과-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+
+
+
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
+        .clear{clear: both;}
 
         ul,
         li {
@@ -29,6 +38,7 @@
         header {
             position: sticky;
             top: 0;
+            z-index: 1;
         }
 
         .top {
@@ -39,17 +49,26 @@
         }
 
         .logo {
+            
+            
             font-family: 'Playfair Display', serif;
             text-align: center;
             font-size: 30px;
             margin: 30px 0 20px 0;
             text-shadow: 0ch;
+           
         }
 
         .top_container {
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
+          
+        }
+
+        .util_menu {
+            display: inline;
+            
         }
 
         .top_item {
@@ -160,10 +179,26 @@
 
 
 main .words .word {
-    margin-top : 1000px;
+    margin-top : 200px;
+    color:#000;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+main .words .word_after {
+    margin-top : 10px;
+    color:#000;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+}
+
+main .index_pic .pic1 {
+    margin-top : 10px;
     color:#000;
     text-align: center;
 }
+
+
     </style>
     <script>
     let observer = new IntersectionObserver(()=>{})
@@ -181,9 +216,15 @@ main .words .word {
     <div id="page">
         <header>
             <div class=top>
+
                 <div class=logo>
                     YourScent
                 </div>
+
+
+
+                <div class = "clear"></div>
+
                 <div class=top_container>
                     <div class=top_item>Product</div>
                     <div class=top_item>Scent</div>
@@ -191,6 +232,7 @@ main .words .word {
                     <div class=top_item>Review</div>
                     <div class=top_item>YourScent</div>
                 </div>
+
             </div>
         </header>
 
@@ -234,14 +276,42 @@ main .words .word {
             </div>
 
 
-            <div class = "words">
+        <div class = "words" >
+                <div class = "word" data-aos="fade-up" data-aos-offset="600" data-aos-duration="2500"><h1> 여러분에게 향기는 무엇을 떠올리게 하나요? </h1></div>                          
+        </div>
 
-                <div class = "word"><h1> 안녕하세요, 향기(Scent)는 무엇일까요? </h1></div>
-                <div class = "word"><h1> 안녕하세요, 향기(Scent)는 무엇일까요? </h1></div>
-                <div class = "word"><h1> 안녕하세요, 향기(Scent)는 무엇일까요? </h1></div>
-                <div class = "word"><h1> 안녕하세요, 향기(Scent)는 무엇일까요? </h1></div>
-                
-            </div>
+
+        <div class = "index_pic">
+            <div class = "pic1" data-aos-delay= "1500" data-aos="fade-up" data-aos-offset="700" data-aos-easing="ease-out-cubic" data-aos-duration="1500"><img src ="./img/man1.jpg" style="margin-top: 100px;"></div>
+        </div>
+
+
+
+
+        <div class = "words" >
+            <div class = "word" data-aos="fade-up" data-aos-offset="1900" data-aos-easing="ease-out-cubic" data-aos-duration="2500"  ><h1> 그것은  소중한 누군가와 함께 나누었던 </h1></div>
+        </div>
+
+        <div class = "words" >
+            <div class = "word" data-aos="fade-up" data-aos-offset="2100" data-aos-easing="ease-out-cubic" data-aos-duration="2000"  ><h1> 추억, 사랑.. </h1></div>
+        </div>
+
+        <div class ="words">
+            <div class = "word_after" data-aos-delay= "1500" data-aos="fade-up" data-aos-offset="2100" data-aos-easing="ease-out-cubic" data-aos-duration="2000"  ><h1> 어쩌면 다시 돌아갈 수 없는 순간일 수도 있습니다. </h1></div>
+        </div> 
+
+        <div class = "words">
+            <div class = "word" data-aos="fade-up" data-aos-offset="2600" data-aos-easing="ease-out-cubic" data-aos-duration="2000"  ><h1 style="font-family: 'Playfair Display', serif; font-size: 60px;"> " YourScent "</h1> </div>
+        </div>
+
+        <div class = "words">
+            <div class = "word_after" data-aos="fade-up" data-aos-offset="2600" data-aos-easing="ease-out-cubic" data-aos-duration="2000"  ><h1 style="font-family: 'Playfair Display', serif;">  그 때, 그 시절 향수에 묻혀보세요</h1></div>
+        </div>
+
+           <!-- AOS 스크립트 시작 -->
+           <script> 
+            AOS.init(); // 자바스크립트로 init()을 해야 동작한다.
+        </script>
 
 
         </main>
