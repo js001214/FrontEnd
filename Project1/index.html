@@ -32,7 +32,7 @@
 
         #page {
             width: 100%;
-            height: 6000px;
+            height: 3000px;
         }
 
         header {
@@ -42,9 +42,9 @@
         }
 
         .top {
-            height: 130px;
+            height: 135px;
         /*  border: 1px solid red; */
-            background-color: white;
+            background-color: ivory;
             z-index: 1;
         }
 
@@ -88,6 +88,87 @@
         .top_item:hover:after {
             transform: scaleX(1);
         }
+
+
+        @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
+body {
+  margin: 0;
+  height: 100%;
+  background-image: linear-gradient(to top, #d9afd9 0%, #97d9e1 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.button_container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 30%;
+}
+
+.description, .link {
+  font-family: 'Amatic SC', cursive;
+  text-align: center;
+}
+
+.description {
+  font-size: 35px;
+}
+
+.btn {
+  border: none;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+  overflow: hidden;
+  position: absolute;
+  top: 3000 px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #222;
+  padding: 17px 60px;
+  margin: 0 auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+}
+
+.btn span {
+  position: relative; 
+  z-index: 1;
+}
+
+.btn:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 490%;
+  width: 140%;
+  background: #78c7d2;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+}
+
+.btn:hover:after {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+.link {
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.link a {
+  color: #000;
+  font-size: 25px; 
+}
 
 
         
@@ -199,6 +280,21 @@ main .index_pic .pic1 {
 }
 
 
+
+footer .footer_box {
+    padding: 100px 0;
+    color: #fff;
+    background-color: #231F20;
+    text-align: center;
+    margin-top: 600px;
+}
+
+footer .footer_inner2 .inner2_word {
+    display: inline;
+    margin-left: 15px;
+}
+
+
     </style>
     <script>
     let observer = new IntersectionObserver(()=>{})
@@ -215,22 +311,26 @@ main .index_pic .pic1 {
 <body>
     <div id="page">
         <header>
-            <div class=top>
-
+            <div class=top style="border-bottom: 1px solid gainsboro;">
+                <div style="height: 1px; font-size: 1px; display: block; color: white;" >.</div>
                 <div class=logo>
                     YourScent
+                    <div><img src="./img/ico_cart.png" style="position: absolute; right:90px; top : 40px;"></div>
+                    <div><img src="./img/ico_my.png" style="position: absolute; right:50px; top : 40px;"></div>
                 </div>
+                
 
 
 
                 <div class = "clear"></div>
 
                 <div class=top_container>
-                    <div class=top_item>Product</div>
-                    <div class=top_item>Scent</div>
-                    <div class=top_item>About</div>
-                    <div class=top_item>Review</div>
-                    <div class=top_item>YourScent</div>
+                    <div class="top_item">Product</div>
+                    <div class="top_item">Scent</div>
+                    <div class="top_item">About</div>
+                    <div class="top_item">Review</div>
+                    <div class="top_item">Best</div>
+                    <div class="top_item">Gift</div>
                 </div>
 
             </div>
@@ -277,12 +377,12 @@ main .index_pic .pic1 {
 
 
         <div class = "words" >
-                <div class = "word" data-aos="fade-up" data-aos-offset="600" data-aos-duration="2500"><h1> 여러분에게 향기는 무엇을 떠올리게 하나요? </h1></div>                          
+                <div class = "word" data-aos="fade-up" data-aos-offset="700" data-aos-duration="2500"><h1> 여러분에게 향기는 무엇을 떠올리게 하나요? </h1></div>                          
         </div>
 
 
         <div class = "index_pic">
-            <div class = "pic1" data-aos-delay= "1500" data-aos="fade-up" data-aos-offset="700" data-aos-easing="ease-out-cubic" data-aos-duration="1500"><img src ="./img/man1.jpg" style="margin-top: 100px;"></div>
+            <div class = "pic1" data-aos-delay= "1400" data-aos="fade-up" data-aos-offset="700" data-aos-easing="ease-out-cubic" data-aos-duration="1500"><img src ="./img/man1.jpg" style="margin-top: 100px; width: 100%;"></div>
         </div>
 
 
@@ -314,8 +414,51 @@ main .index_pic .pic1 {
         </script>
 
 
+
+
+        
+
+            <div class="button_container">
+            <p class="description"></p>
+            <button class="btn" ><span >제품 둘러보기</span></button>
+            <!--<p class="link">
+                Design by 
+                <a href="https://dribbble.com/skytrip" target="_blank">SkyTrip</a>
+            </p>-->
+            </div>
         </main>
-        <footer></footer>
+
+
+        <footer>
+            <div class = "footer_box">
+                <div class =footer_inner1>
+                    <div class = logo>
+                        YourScent
+                    </div>
+                    <div>
+                        주식회사 YourScent코리아 (YourScent Korea Co.Ltd.) 
+                    </div>
+                    
+                    <div>
+                        고객센터 : YourScent Cheongdam : 070-4771-0636 / YourScent London : 070-7761-7542 상담시간 : 12:00 ~ 21:00
+                    </div>
+                </div>
+                <br>
+                <div class = footer_inner2>
+                    <ul>
+                        <li class = "inner2_word"> FAQ </li>
+                        <li class = "inner2_word"> | </li>
+                        <li class = "inner2_word"> About Us </li>
+                        <li class = "inner2_word"> | </li>
+                        <li class = "inner2_word"> 이용약관 </li>
+                        <li class = "inner2_word"> | </li>
+                        <li class = "inner2_word"> 개인정보처리방침 </li>
+                    </ul>
+                </div>
+            </div>
+
+        </footer>
+
     </div>
 </body>
 
