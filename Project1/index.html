@@ -10,6 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet">
+
     <!-- 스크롤 애니메이션 효과-->
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
@@ -31,7 +35,7 @@
         }
 
         #page {
-            width: 100%;
+            width: 1910px;
             height: 3000px;
         }
 
@@ -44,7 +48,7 @@
         .top {
             height: 135px;
         /*  border: 1px solid red; */
-            background-color: ivory;
+            background-color: white;
             z-index: 1;
         }
 
@@ -63,6 +67,8 @@
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
+            font-family: 'Playfair Display', serif;
+            font-family: 'Roboto', sans-serif; 
           
         }
 
@@ -80,7 +86,7 @@
         .top_item:after {
             display: block;
             content: '';
-            border-bottom: solid 3px #ef5350;
+            border-bottom: solid 3px #212121;
             transform: scaleX(0);
             transition: transform 250ms ease-in-out;
         }
@@ -105,7 +111,8 @@ body {
   position: absolute;
   left: 0;
   right: 0;
-  top: 30%;
+  top: 3720px;
+  left: 841px;
 }
 
 .description, .link {
@@ -126,7 +133,9 @@ body {
   outline: none;
   overflow: hidden;
   position: absolute;
-  top: 3000 px;
+  top: 10000 px;
+  right: 300 px;
+  bottom: 3000 px;
   color: #fff;
   font-weight: 700;
   font-size: 15px;
@@ -312,7 +321,7 @@ footer .footer_inner2 .inner2_word {
     <div id="page">
         <header>
             <div class=top style="border-bottom: 1px solid gainsboro;">
-                <div style="height: 1px; font-size: 1px; display: block; color: white;" >.</div>
+                <div style="height: 1px; font-size: 1px; display: block; color: white;" ></div>
                 <div class=logo>
                     YourScent
                     <div><img src="./img/ico_cart.png" style="position: absolute; right:90px; top : 40px;"></div>
@@ -325,12 +334,12 @@ footer .footer_inner2 .inner2_word {
                 <div class = "clear"></div>
 
                 <div class=top_container>
-                    <div class="top_item">Product</div>
-                    <div class="top_item">Scent</div>
-                    <div class="top_item">About</div>
-                    <div class="top_item">Review</div>
-                    <div class="top_item">Best</div>
-                    <div class="top_item">Gift</div>
+                    <div class="top_item"><a href ="#" style="text-decoration: none; color: black">Product</a></div>
+                    <div class="top_item"><a href ="#" style="text-decoration: none; color: black">Scent</a></div>
+                    <div class="top_item"><a href ="#" style="text-decoration: none; color: black">About</a></div>
+                    <div class="top_item"><a href ="#" style="text-decoration: none; color: black">Review</a></div>
+                    <div class="top_item"><a href ="#" style="text-decoration: none; color: black">Best</a></div>
+                    <div class="top_item"><a href ="#" style="text-decoration: none; color: black">Gift</a></div>
                 </div>
 
             </div>
@@ -420,7 +429,7 @@ footer .footer_inner2 .inner2_word {
 
             <div class="button_container">
             <p class="description"></p>
-            <button class="btn" ><span >제품 둘러보기</span></button>
+            <button class="btn" ><span ><a href = "sub1.html" style="text-decoration: none; color: whitesmoke;">제품 둘러보기</a></span></button>
             <!--<p class="link">
                 Design by 
                 <a href="https://dribbble.com/skytrip" target="_blank">SkyTrip</a>
