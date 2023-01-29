@@ -101,7 +101,9 @@
 
 
 
-        /*-------------slide 처음----------------*/
+
+        /*-------------main 시작-----------------*/
+        /*-------------slide 시작----------------*/
     html, body { box-sizing: border-box; padding: 0; margin: 0; text-align: center; }
     *, *:before, *:after { box-sizing: inherit; }
     .clearfix:after { content: ''; display: block; clear: both; float: none; }
@@ -110,14 +112,16 @@
     /* container - body */
     #container { width: 1000px; margin: auto; }
     .slide_wrap { position: relative; width: 400px; margin: auto; padding-bottom: 30px; }
-    .slide_box { width: 100%; margin: auto; overflow-x: hidden; }
-    .slide_content { display: table; float: left; width: 400px; height: 400px; }
+    .slide_box { width: 100%;  margin: auto; overflow-x: hidden; }
+    .slide_content { display: table; float: left; width: 400px; height: 400px;}
     .slide_content > p { display: table-cell; vertical-align: middle; text-align: center;   color: #555; }
-    .slide_content.slide01 { background: #ddbdff; }
-    .slide_content.slide02 { background: #9fd6c2; }
-    .slide_content.slide03 { background: #abe2f7; }
-    .slide_content.slide04 { background: #f08c78; }
-    .slide_content.slide05 { background: #fbdb65; }
+    /* 
+    .slide_content.slide01 {  }
+    .slide_content.slide02 {  }
+    .slide_content.slide03 {  }
+    .slide_content.slide04 {  }
+    .slide_content.slide05 {  }
+    */
     .slide_btn_box > button { position: absolute    ; top: 50%; margin-top: -45px; width: 60px; height: 60px; font-size: 16px; color: #999; background: none; border: 1px solid #ddd; cursor: pointer; }
     .slide_btn_box > .slide_btn_prev { left: -100px; }
     .slide_btn_box > .slide_btn_next { right: -100px; }
@@ -129,13 +133,19 @@
     /*-------------slide 끝----------------*/
 
 
+    /*---main grid 상품 진열---*/
+
+    .product_box { display : grid}
+    .products { }
+    .products_img { }
+
+    /*---main grid 상품 진열---*/
 
 
 
 
 
-
-
+     /*-------------main 끝-----------------*/
 
 
     </style>
@@ -169,10 +179,7 @@
         </header>
 
 
-
-
-
-
+        <main>
         <h1 class="title">The most selled</h1>
 
         
@@ -181,19 +188,19 @@
             <div class="slide_box">
               <div class="slide_list clearfix">
                 <div class="slide_content slide01">
-                  <p><img src="./img/1.jpg"></p>
+                  <p><img  style="object-fit: fill; width: 400px; height: 400px;" src="./img/perfume1.png"></p>
                 </div>
                 <div class="slide_content slide02">
-                  <p>2</p>
+                  <p><img  style="object-fit: fill; width: 400px; height: 400px;" src="./img/perfume2.png"></p>
                 </div>
                 <div class="slide_content slide03">
-                  <p>3</p>
+                  <p><img  style="object-fit: fill; width: 400px; height: 400px;"src="./img/perfume1.png"></p>
                 </div>
                 <div class="slide_content slide04">
-                  <p>4</p>
+                  <p><img  style="object-fit: fill; width: 400px; height: 400px;" src="./img/perfume1.png"></p>
                 </div>
                 <div class="slide_content slide05">
-                  <p>5</p>
+                  <p><img  style="object-fit: fill; width: 400px; height: 400px;" src="./img/perfume1.png"></p>
                 </div>
               </div>
               <!-- // .slide_list -->
@@ -312,6 +319,73 @@
             });
           })();
         </script>
-    
+
+        <div id="product_box">
+
+          <div id ="products">
+            <div id ="products_img">
+              <img src ="img/perfume1.png">
+            </div>
+            <ul id ="products_info">
+              <li id ="badge">The Black Collection</li>
+              <li class="txt1">EAU DE Perfume (Black Collection)</li>
+              <li class="txt2">30ml</li>
+              <li class="txt3">216,000원</li>
+            </ul>
+          </div>
+
+          <div id ="products">
+            
+          </div>
+
+          <div id ="products">
+            
+          </div>
+
+          <div id ="products">
+            
+          </div>
+
+          <div id ="products">
+            
+          </div>
+
+          <div id ="products">
+            
+          </div>
+
+          <div id ="products">
+            
+          </div>
+
+          <div id ="products">
+            
+          </div>
+
+          <div id ="products">
+            
+          </div>
+
+          <div id ="products">
+            
+          </div>
+
+          <div id ="products">
+            
+          </div>
+
+          <div id ="products">
+            
+          </div>
+
+        </div> <!-- product_box -->
+
+
+
+        </main>
+
+
+      
+     </div>
 </body>
 </html>
